@@ -1,0 +1,27 @@
+---
+# Import the asset
+
+- name: Import json asset - {{ item.name }}
+  awx.awx.import:
+    assets: "{{ lookup('file', '{{ item.path }}') | from_json() }}"
+    controller_host: "tower.parmstrong.ca"
+    controller_username: "{{ controller_username }}"
+    controller_password: "{{ controller_password }}"
+    validate_certs: false
+  register: result
+  when: backup_type == json
+
+- name: Import json asset - {{ item.name }}
+  awx.awx.import:
+    assets: "{{ lookup('file', '{{ item.path }}') | from_yaml() }}"
+    controller_host: "tower.parmstrong.ca"
+    controller_username: "{{ controller_username }}"
+    controller_password: "{{ controller_password }}"
+    validate_certs: false
+  register: result
+  when: backup_type == yml
+
+  
+# - debug:
+#     var: result
+  

@@ -1,0 +1,42 @@
+projects:
+- allow_override: false
+  credential:
+    credential_type:
+      kind: scm
+      name: Source Control
+      type: credential_type
+    name: towergithub
+    organization:
+      name: Default
+      type: organization
+    type: credential
+  default_environment:
+    name: Default execution environment
+    type: execution_environment
+  description: Automating Content in Satellite 6.0
+  local_path: _78__automatingcontentmanagement
+  name: AutomatingContentManagement
+  natural_key:
+    name: AutomatingContentManagement
+    organization:
+      name: Default
+      type: organization
+    type: project
+  organization:
+    name: Default
+    type: organization
+  related:
+    notification_templates_error: []
+    notification_templates_started: []
+    notification_templates_success: []
+    schedules: []
+  scm_branch: main
+  scm_clean: true
+  scm_delete_on_update: false
+  scm_refspec: ''
+  scm_track_submodules: true
+  scm_type: git
+  scm_update_cache_timeout: 0
+  scm_update_on_launch: false
+  scm_url: https://github.com/parmstro/AutomatingContentManagement.git
+  timeout: 0

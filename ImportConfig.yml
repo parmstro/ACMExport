@@ -1,0 +1,36 @@
+---
+# ImportConfig.yml
+# This is the main Import play
+
+- name: Import the ACM configuration to AAP
+  hosts: all
+  vars_files:
+  - group_vars/vault_all.yml
+  - group_vars/all.yml
+
+  tasks:
+
+  - name: "Template the credential asset files"
+    include_tasks: tasks/template_asset_files.yml
+    loop: "{{ credentials }}"
+      
+  - name: "Import assests - credentials"
+    include_tasks: tasks/import_asset.yml
+    loop: "{{ credentials }}"
+  
+  - name: "Import assests - projects"
+    include_tasks: tasks/import_asset.yml
+    loop: "{{ projects }}"
+  
+  - name: "Import assests - inventories"
+    include_tasks: tasks/import_asset.yml
+    loop: "{{ inventories }}"
+  
+  - name: "Import assests - job templates"
+    include_tasks: tasks/import_asset.yml
+    loop: "{{ job_templates }}"
+  
+  - name: "Import assests - workflow job templates"
+    include_tasks: tasks/import_asset.yml
+    loop: "{{ workflow_job_templates }}"
+  

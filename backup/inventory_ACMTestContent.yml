@@ -1,0 +1,364 @@
+inventory:
+- description: Systems that will be used to test content in the Automating Content
+    Management Project
+  host_filter: null
+  kind: ''
+  name: ACMTestContent
+  natural_key:
+    name: ACMTestContent
+    organization:
+      name: Default
+      type: organization
+    type: inventory
+  organization:
+    name: Default
+    type: organization
+  related:
+    groups:
+    - description: LAMP Database Servers
+      inventory:
+        name: ACMTestContent
+        organization:
+          name: Default
+          type: organization
+        type: inventory
+      name: dbservers
+      natural_key:
+        inventory:
+          name: ACMTestContent
+          organization:
+            name: Default
+            type: organization
+          type: inventory
+        name: dbservers
+        type: group
+      related:
+        children: []
+        hosts:
+        - inventory:
+            name: ACMTestContent
+            organization:
+              name: Default
+              type: organization
+            type: inventory
+          name: testlamp.parmstrong.ca
+          type: host
+      variables: '---'
+    - description: Jboss Test Servers
+      inventory:
+        name: ACMTestContent
+        organization:
+          name: Default
+          type: organization
+        type: inventory
+      name: JBoss
+      natural_key:
+        inventory:
+          name: ACMTestContent
+          organization:
+            name: Default
+            type: organization
+          type: inventory
+        name: JBoss
+        type: group
+      related:
+        children: []
+        hosts:
+        - inventory:
+            name: ACMTestContent
+            organization:
+              name: Default
+              type: organization
+            type: inventory
+          name: testjboss.parmstrong.ca
+          type: host
+      variables: '---'
+    - description: Test LAMP stack hosts
+      inventory:
+        name: ACMTestContent
+        organization:
+          name: Default
+          type: organization
+        type: inventory
+      name: LAMP
+      natural_key:
+        inventory:
+          name: ACMTestContent
+          organization:
+            name: Default
+            type: organization
+          type: inventory
+        name: LAMP
+        type: group
+      related:
+        children: []
+        hosts:
+        - inventory:
+            name: ACMTestContent
+            organization:
+              name: Default
+              type: organization
+            type: inventory
+          name: testlamp.parmstrong.ca
+          type: host
+      variables: '---'
+    - description: LAMP Stack Webservers
+      inventory:
+        name: ACMTestContent
+        organization:
+          name: Default
+          type: organization
+        type: inventory
+      name: webservers
+      natural_key:
+        inventory:
+          name: ACMTestContent
+          organization:
+            name: Default
+            type: organization
+          type: inventory
+        name: webservers
+        type: group
+      related:
+        children: []
+        hosts:
+        - inventory:
+            name: ACMTestContent
+            organization:
+              name: Default
+              type: organization
+            type: inventory
+          name: testlamp.parmstrong.ca
+          type: host
+      variables: '---'
+    - description: test WordPress servers
+      inventory:
+        name: ACMTestContent
+        organization:
+          name: Default
+          type: organization
+        type: inventory
+      name: WordPress
+      natural_key:
+        inventory:
+          name: ACMTestContent
+          organization:
+            name: Default
+            type: organization
+          type: inventory
+        name: WordPress
+        type: group
+      related:
+        children: []
+        hosts:
+        - inventory:
+            name: ACMTestContent
+            organization:
+              name: Default
+              type: organization
+            type: inventory
+          name: testwordpress.parmstrong.ca
+          type: host
+      variables: '---'
+    - description: ''
+      inventory:
+        name: ACMTestContent
+        organization:
+          name: Default
+          type: organization
+        type: inventory
+      name: wordpress-server
+      natural_key:
+        inventory:
+          name: ACMTestContent
+          organization:
+            name: Default
+            type: organization
+          type: inventory
+        name: wordpress-server
+        type: group
+      related:
+        children: []
+        hosts:
+        - inventory:
+            name: ACMTestContent
+            organization:
+              name: Default
+              type: organization
+            type: inventory
+          name: testwordpress.parmstrong.ca
+          type: host
+      variables: '---'
+    hosts:
+    - description: a test jboss standalone host
+      enabled: true
+      instance_id: ''
+      inventory:
+        name: ACMTestContent
+        organization:
+          name: Default
+          type: organization
+        type: inventory
+      name: testjboss.parmstrong.ca
+      natural_key:
+        inventory:
+          name: ACMTestContent
+          organization:
+            name: Default
+            type: organization
+          type: inventory
+        name: testjboss.parmstrong.ca
+        type: host
+      related:
+        groups:
+        - inventory:
+            name: ACMTestContent
+            organization:
+              name: Default
+              type: organization
+            type: inventory
+          name: JBoss
+          type: group
+      variables: '---
+
+        #modify the below values to control the deployment
+
+        #based on Satellite parameters
+
+        fqdn: "testjboss.parmstrong.ca"
+
+        hostgroup: "baseRHEL8/JBossSOE"
+
+        kickstart_repository: "Red Hat Enterprise Linux 8 for x86_64 - BaseOS Kickstart
+        8.5"
+
+        compute_resource: "vcenter.parmstrong.ca"
+
+        compute_profile: "2-Medium"
+
+        mac: "00:50:56:ff:ff:ff"
+
+        dhostname: ""'
+    - description: a test lamp stack host
+      enabled: true
+      instance_id: ''
+      inventory:
+        name: ACMTestContent
+        organization:
+          name: Default
+          type: organization
+        type: inventory
+      name: testlamp.parmstrong.ca
+      natural_key:
+        inventory:
+          name: ACMTestContent
+          organization:
+            name: Default
+            type: organization
+          type: inventory
+        name: testlamp.parmstrong.ca
+        type: host
+      related:
+        groups:
+        - inventory:
+            name: ACMTestContent
+            organization:
+              name: Default
+              type: organization
+            type: inventory
+          name: dbservers
+          type: group
+        - inventory:
+            name: ACMTestContent
+            organization:
+              name: Default
+              type: organization
+            type: inventory
+          name: LAMP
+          type: group
+        - inventory:
+            name: ACMTestContent
+            organization:
+              name: Default
+              type: organization
+            type: inventory
+          name: webservers
+          type: group
+      variables: '---
+
+        #modify the below values to control the deployment
+
+        #based on Satellite parameters
+
+        fqdn: "testlamp.parmstrong.ca"
+
+        hostgroup: "baseRHEL8"
+
+        kickstart_repository: "Red Hat Enterprise Linux 8 for x86_64 - BaseOS Kickstart
+        8.5"
+
+        compute_resource: "vcenter.parmstrong.ca"
+
+        compute_profile: "2-Medium"
+
+        mac: "00:50:56:ff:ff:ff"
+
+        dhostname: ""'
+    - description: a test wordpress server
+      enabled: true
+      instance_id: ''
+      inventory:
+        name: ACMTestContent
+        organization:
+          name: Default
+          type: organization
+        type: inventory
+      name: testwordpress.parmstrong.ca
+      natural_key:
+        inventory:
+          name: ACMTestContent
+          organization:
+            name: Default
+            type: organization
+          type: inventory
+        name: testwordpress.parmstrong.ca
+        type: host
+      related:
+        groups:
+        - inventory:
+            name: ACMTestContent
+            organization:
+              name: Default
+              type: organization
+            type: inventory
+          name: WordPress
+          type: group
+        - inventory:
+            name: ACMTestContent
+            organization:
+              name: Default
+              type: organization
+            type: inventory
+          name: wordpress-server
+          type: group
+      variables: '---
+
+        #modify the below values to control the deployment
+
+        #based on Satellite parameters
+
+        fqdn: "testwordpress.parmstrong.ca"
+
+        hostgroup: "baseRHEL8/WordPress"
+
+        kickstart_repository: "Red Hat Enterprise Linux 8 for x86_64 - BaseOS Kickstart
+        8.5"
+
+        compute_resource: "vcenter.parmstrong.ca"
+
+        compute_profile: "2-Medium"
+
+        mac: "00:50:56:ff:ff:ff"
+
+        dhostname: ""'
+  variables: '---'

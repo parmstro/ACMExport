@@ -1,0 +1,38 @@
+---
+# ExportConfig.yml
+# This is the main Export play
+
+- name: "Export the ACM configuration from AAP"
+  hosts: all
+  vars_files:
+  - group_vars/vault_all.yml
+  - group_vars/all.yml
+
+  tasks:
+  
+  - name: Create the backup directory
+    file:
+      path: "{{ backup_path }}"      
+      state: directory
+    delegate_to: 127.0.0.1
+  
+  - name: "Export assests - credentials"
+    include_tasks: tasks/export_credential.yml
+    loop: "{{ credentials }}"
+
+  - name: "Export assests - projects"
+    include_tasks: tasks/export_project.yml
+    loop: "{{ projects }}"
+  
+  - name: "Export assests - inventories"
+    include_tasks: tasks/export_inventory.yml
+    loop: "{{ inventories }}"
+  
+  - name: "Export assests - job templates"
+    include_tasks: tasks/export_jobtemplate.yml
+    loop: "{{ job_templates }}"
+  
+  - name: "Export assests - workflow job templates"
+    include_tasks: tasks/export_workflowjobtemplate.yml
+    loop: "{{ workflow_job_templates }}"
+  

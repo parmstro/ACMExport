@@ -1,0 +1,81 @@
+job_templates:
+- allow_simultaneous: false
+  ask_credential_on_launch: false
+  ask_diff_mode_on_launch: false
+  ask_inventory_on_launch: false
+  ask_job_type_on_launch: false
+  ask_limit_on_launch: false
+  ask_scm_branch_on_launch: false
+  ask_skip_tags_on_launch: false
+  ask_tags_on_launch: false
+  ask_variables_on_launch: false
+  ask_verbosity_on_launch: false
+  become_enabled: true
+  description: build JBoss Standalone test host
+  diff_mode: false
+  execution_environment:
+    name: sat-ee-supported
+    type: execution_environment
+  extra_vars: '---'
+  force_handlers: false
+  forks: 0
+  host_config_key: ''
+  inventory:
+    name: ACMTestContent
+    organization:
+      name: Default
+      type: organization
+    type: inventory
+  job_slice_count: 1
+  job_tags: ''
+  job_type: run
+  limit: WordPress
+  name: ACM5.3.1BuildWordpress
+  natural_key:
+    name: ACM5.3.1BuildWordpress
+    organization:
+      name: Default
+      type: organization
+    type: job_template
+  playbook: testcontent/wordpress-nginx_rhel7/main.yml
+  project:
+    name: AutomatingContentManagement
+    organization:
+      name: Default
+      type: organization
+    type: project
+  related:
+    credentials:
+    - credential_type:
+        kind: vault
+        name: Vault
+        type: credential_type
+      name: ACM_vault
+      organization:
+        name: Default
+        type: organization
+      type: credential
+    - credential_type:
+        kind: ssh
+        name: Machine
+        type: credential_type
+      name: default
+      organization:
+        name: Default
+        type: organization
+      type: credential
+    labels: []
+    notification_templates_error: []
+    notification_templates_started: []
+    notification_templates_success: []
+    schedules: []
+    survey_spec: {}
+  scm_branch: ''
+  skip_tags: ''
+  start_at_task: ''
+  survey_enabled: false
+  timeout: 0
+  use_fact_cache: false
+  verbosity: 0
+  webhook_credential: null
+  webhook_service: ''

@@ -1,0 +1,49 @@
+---
+# Template the asset file.
+# The asset file should have been made into a template
+# during the export process. Now use variables to create
+# the import file from that template using the ansible
+# template command.
+
+# set the template variables
+
+- name: Set variables
+  set_fact: 
+    vault_id_value: "{{ item.vault_id }}"
+  when: item.vault_id is defined
+
+- name: Set variables
+  set_fact: 
+    vault_password_value: "{{ item.vault_password }}"
+  when: item.vault_password is defined
+
+- name: Set variables
+  set_fact: 
+    password_value: "{{ item.password }}"
+  when: item.password is defined
+
+- name: Set variables
+  set_fact: 
+    username_value: "{{ item.username }}"
+  when: item.username is defined
+
+- name: Set variables
+  set_fact: 
+    become_method_value: "{{ item.become_method }}"
+  when: item.become_method is defined
+
+- name: Set variables
+  set_fact: 
+    become_username_value: "{{ item.become_username }}"
+  when: item.become_username is defined
+
+- name: Template the asset - {{ item.name }}
+  template:
+    src: "{{ item.path }}.j2"
+    dest: "{{ item.path }}"
+  
+
+  
+# - debug:
+#     var: result
+  

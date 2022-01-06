@@ -1,0 +1,68 @@
+---
+# Host variables
+controller_host: "tower.parmstrong.ca"
+controller_username: "{{ vault_tower_username }}"
+controller_password: "{{ vault_tower_password }}"
+
+#ACM assets
+backup_path: "./backup"
+#one of yml or json
+backup_type: yml
+credentials:
+- name: default
+  type: machine
+  become_method: "{{ vault_default_credential_become_method }}"
+  become_username: "{{ vault_default_credential_become_username }}"
+  username: "{{ vault_default_credential_username }}"
+  password: "{{ vault_default_credential_password }}"
+  path: "{{ backup_path }}/credential_default.{{ backup_type }}"
+- name: towergithub
+  type: scc
+  username: "{{ vault_towergithub_credential_username }}"
+  password: "{{ vault_towergithub_credential_password }}"
+  path: "{{ backup_path }}/credential_tower_github.{{ backup_type }}"
+- name: ACM_vault
+  type: vault
+  vault_id: "{{ vault_ACM_vault_credential_vault_id }}"
+  vault_password: "{{ vault_ACM_vault_credential_vault_password }}"
+  path: "{{ backup_path }}/credential_ACM_vault.{{ backup_type }}"
+
+projects:
+- name: AutomatingContentManagement
+  path: "{{ backup_path }}/project_ACM.{{ backup_type }}"
+
+inventories:
+- name: ACMTestContent
+  path: "{{ backup_path }}/inventory_ACMTestContent.{{ backup_type }}"
+- name: TheAutomationController
+  path: "{{ backup_path }}/inventory_TheAutomationController.{{ backup_type }}"
+
+job_templates:
+- name: ACM1PublishContent
+  path: "{{ backup_path }}/jobtemplate_ACM1PublishContent.{{ backup_type }}"
+- name: ACM2PromoteToDev
+  path: "{{ backup_path }}/jobtemplate_ACM2PromoteToDev.{{ backup_type }}"
+- name: ACM3CreateTestEnv
+  path: "{{ backup_path }}/jobtemplate_ACM3CreateTestEnv.{{ backup_type }}"
+- name: ACM4CreateSnaps
+  path: "{{ backup_path }}/jobtemplate_ACM4CreateSnaps.{{ backup_type }}"
+- name: ACM5.1.1BuildJBoss
+  path: "{{ backup_path }}/jobtemplate_ACM5.1.1BuildJBoss.{{ backup_type }}"
+- name: ACM5.1.2TestJBoss
+  path: "{{ backup_path }}/jobtemplate_ACM5.1.2TestJBoss.{{ backup_type }}"
+- name: ACM5.2.1BuildLAMP
+  path: "{{ backup_path }}/jobtemplate_ACM5.2.1BuildLAMP.{{ backup_type }}"
+- name: ACM5.2.2TestLAMP
+  path: "{{ backup_path }}/jobtemplate_ACM5.2.2TestLamp.{{ backup_type }}"
+- name: ACM5.3.1BuildWordpress
+  path: "{{ backup_path }}/jobtemplate_ACM5.3.1BuildWordpress.{{ backup_type }}"
+- name: ACM5.3.2TestWordpress
+  path: "{{ backup_path }}/jobtemplate_ACM5.3.2TestWordpress.{{ backup_type }}"
+- name: ACM6PromoteToQA
+  path: "{{ backup_path }}/jobtemplate_ACM6PromoteToQA.{{ backup_type }}"
+- name: ACM7DeleteSnaps
+  path: "{{ backup_path }}/jobtemplate_ACM7DeleteSnaps.{{ backup_type }}"
+
+workflow_job_templates:
+- name: ACMMonthlyContentPublish
+  path: "{{ backup_path }}/workflowtemplate_ACMMonthlyContentPublish.{{ backup_type }}"

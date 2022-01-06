@@ -1,0 +1,28 @@
+---
+# Task to export project
+
+- name: "Export asset - project {{ item.name }}"
+  awx.awx.export:
+    projects: "{{ item.name }}"
+    controller_host: "{{ controller_host }}"
+    controller_username: "{{ controller_username }}"
+    controller_password: "{{ controller_password }}"
+    validate_certs: false
+  register: result
+
+# - debug:
+#     var: result.assets
+
+- name: "Write asset json to local file {{ item.path }}"
+  copy:
+    content: "{{ result.assets | to_nice_json(indent=2) }}"
+    dest: "{{ item.path }}"
+  delegate_to: 127.0.0.1
+  when: backup_type == "json"
+
+- name: "Write asset yaml to local file {{ item.path }}"
+  copy:
+    content: "{{ result.assets | to_nice_yaml(indent=2) }}"
+    dest: "{{ item.path }}"
+  delegate_to: 127.0.0.1
+  when: backup_type == "yml"

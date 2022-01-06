@@ -1,0 +1,40 @@
+inventory:
+- description: The Automation Controller itself
+  host_filter: null
+  kind: ''
+  name: TheAutomationController
+  natural_key:
+    name: TheAutomationController
+    organization:
+      name: Default
+      type: organization
+    type: inventory
+  organization:
+    name: Default
+    type: organization
+  related:
+    groups: []
+    hosts:
+    - description: The automation controller
+      enabled: true
+      instance_id: ''
+      inventory:
+        name: TheAutomationController
+        organization:
+          name: Default
+          type: organization
+        type: inventory
+      name: tower.parmstrong.ca
+      natural_key:
+        inventory:
+          name: TheAutomationController
+          organization:
+            name: Default
+            type: organization
+          type: inventory
+        name: tower.parmstrong.ca
+        type: host
+      related:
+        groups: []
+      variables: '---'
+  variables: '---'

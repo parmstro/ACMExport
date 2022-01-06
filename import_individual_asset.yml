@@ -1,0 +1,29 @@
+# Import individual asset
+
+- name: "Import an individual asset"
+  hosts: all
+  vars_files:
+  - group_vars/vault_all.yml
+  - group_vars/all.yml
+
+  tasks:
+  
+  - name: Import json formated asset
+    awx.awx.import:
+      assets: "{{ lookup('file', '{{ path }}') | from_json() }}"
+      controller_host: "tower.parmstrong.ca"
+      controller_username: "{{ controller_username }}"
+      controller_password: "{{ controller_password }}"
+      validate_certs: false
+    register: result
+    when: backup_type == "json"
+
+  - name: Import yaml formatted asset
+    awx.awx.import:
+      assets: "{{ lookup('file', '{{ path }}') | from_yaml() }}"
+      controller_host: "tower.parmstrong.ca"
+      controller_username: "{{ controller_username }}"
+      controller_password: "{{ controller_password }}"
+      validate_certs: false
+    register: result
+    when: backup_type == "yml"

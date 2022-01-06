@@ -1,0 +1,508 @@
+workflow_job_templates:
+- allow_simultaneous: false
+  ask_inventory_on_launch: false
+  ask_limit_on_launch: false
+  ask_scm_branch_on_launch: false
+  ask_variables_on_launch: false
+  description: Monthly Publishing of Satellite Content views
+  extra_vars: '---'
+  inventory:
+    name: TheAutomationController
+    organization:
+      name: Default
+      type: organization
+    type: inventory
+  limit: ''
+  name: ACMMonthlyContentPublish
+  natural_key:
+    name: ACMMonthlyContentPublish
+    organization: null
+    type: workflow_job_template
+  organization: null
+  related:
+    labels: []
+    notification_templates_approvals: []
+    notification_templates_error: []
+    notification_templates_started: []
+    notification_templates_success: []
+    schedules: []
+    survey_spec: {}
+    workflow_nodes:
+    - all_parents_must_converge: false
+      diff_mode: null
+      extra_data: {}
+      identifier: 0792c7c6-0273-4ced-a419-bc021445f8b7
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      natural_key:
+        identifier: 0792c7c6-0273-4ced-a419-bc021445f8b7
+        type: workflow_job_template_node
+        workflow_job_template:
+          name: ACMMonthlyContentPublish
+          organization: null
+          type: workflow_job_template
+      related:
+        always_nodes: []
+        credentials: []
+        failure_nodes: []
+        success_nodes:
+        - identifier: 6beb52b6-a255-46dd-8065-992423fd723f
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: ACMMonthlyContentPublish
+            organization: null
+            type: workflow_job_template
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        name: ACM1PublishContent
+        organization:
+          name: Default
+          type: organization
+        type: job_template
+      verbosity: null
+      workflow_job_template:
+        name: ACMMonthlyContentPublish
+        organization: null
+        type: workflow_job_template
+    - all_parents_must_converge: false
+      diff_mode: null
+      extra_data: {}
+      identifier: 6f2e335e-d34b-40f9-9a0a-0ee5079432ce
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      natural_key:
+        identifier: 6f2e335e-d34b-40f9-9a0a-0ee5079432ce
+        type: workflow_job_template_node
+        workflow_job_template:
+          name: ACMMonthlyContentPublish
+          organization: null
+          type: workflow_job_template
+      related:
+        always_nodes: []
+        credentials: []
+        failure_nodes: []
+        success_nodes:
+        - identifier: 5aeb8dd1-d8ad-4bc2-836d-d18d642a2c6a
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: ACMMonthlyContentPublish
+            organization: null
+            type: workflow_job_template
+        - identifier: 5fc9351b-b445-4c8d-9182-9be2dc8aef92
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: ACMMonthlyContentPublish
+            organization: null
+            type: workflow_job_template
+        - identifier: 93425fe8-35a0-4894-9938-40be34f1216b
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: ACMMonthlyContentPublish
+            organization: null
+            type: workflow_job_template
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        name: ACM4CreateSnaps
+        organization:
+          name: Default
+          type: organization
+        type: job_template
+      verbosity: null
+      workflow_job_template:
+        name: ACMMonthlyContentPublish
+        organization: null
+        type: workflow_job_template
+    - all_parents_must_converge: false
+      diff_mode: null
+      extra_data: {}
+      identifier: 6beb52b6-a255-46dd-8065-992423fd723f
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      natural_key:
+        identifier: 6beb52b6-a255-46dd-8065-992423fd723f
+        type: workflow_job_template_node
+        workflow_job_template:
+          name: ACMMonthlyContentPublish
+          organization: null
+          type: workflow_job_template
+      related:
+        always_nodes: []
+        credentials: []
+        failure_nodes: []
+        success_nodes:
+        - identifier: 94fee87b-663b-488c-9d10-92d69d220b22
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: ACMMonthlyContentPublish
+            organization: null
+            type: workflow_job_template
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        name: ACM2PromoteToDev
+        organization:
+          name: Default
+          type: organization
+        type: job_template
+      verbosity: null
+      workflow_job_template:
+        name: ACMMonthlyContentPublish
+        organization: null
+        type: workflow_job_template
+    - all_parents_must_converge: false
+      diff_mode: null
+      extra_data: {}
+      identifier: 5aeb8dd1-d8ad-4bc2-836d-d18d642a2c6a
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      natural_key:
+        identifier: 5aeb8dd1-d8ad-4bc2-836d-d18d642a2c6a
+        type: workflow_job_template_node
+        workflow_job_template:
+          name: ACMMonthlyContentPublish
+          organization: null
+          type: workflow_job_template
+      related:
+        always_nodes: []
+        credentials: []
+        failure_nodes: []
+        success_nodes:
+        - identifier: 49d6b2a2-f51a-43dc-9f99-ae32709a84dd
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: ACMMonthlyContentPublish
+            organization: null
+            type: workflow_job_template
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        name: ACM5.1.1BuildJBoss
+        organization:
+          name: Default
+          type: organization
+        type: job_template
+      verbosity: null
+      workflow_job_template:
+        name: ACMMonthlyContentPublish
+        organization: null
+        type: workflow_job_template
+    - all_parents_must_converge: false
+      diff_mode: null
+      extra_data: {}
+      identifier: 5fc9351b-b445-4c8d-9182-9be2dc8aef92
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      natural_key:
+        identifier: 5fc9351b-b445-4c8d-9182-9be2dc8aef92
+        type: workflow_job_template_node
+        workflow_job_template:
+          name: ACMMonthlyContentPublish
+          organization: null
+          type: workflow_job_template
+      related:
+        always_nodes: []
+        credentials: []
+        failure_nodes: []
+        success_nodes:
+        - identifier: e4a81e56-0129-41b4-b16e-fb4a8290968d
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: ACMMonthlyContentPublish
+            organization: null
+            type: workflow_job_template
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        name: ACM5.2.1BuildLAMP
+        organization:
+          name: Default
+          type: organization
+        type: job_template
+      verbosity: null
+      workflow_job_template:
+        name: ACMMonthlyContentPublish
+        organization: null
+        type: workflow_job_template
+    - all_parents_must_converge: false
+      diff_mode: null
+      extra_data: {}
+      identifier: 93425fe8-35a0-4894-9938-40be34f1216b
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      natural_key:
+        identifier: 93425fe8-35a0-4894-9938-40be34f1216b
+        type: workflow_job_template_node
+        workflow_job_template:
+          name: ACMMonthlyContentPublish
+          organization: null
+          type: workflow_job_template
+      related:
+        always_nodes: []
+        credentials: []
+        failure_nodes: []
+        success_nodes:
+        - identifier: b52b6bb4-c27f-43e1-9580-2cda382712fe
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: ACMMonthlyContentPublish
+            organization: null
+            type: workflow_job_template
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        name: ACM5.3.1BuildWordpress
+        organization:
+          name: Default
+          type: organization
+        type: job_template
+      verbosity: null
+      workflow_job_template:
+        name: ACMMonthlyContentPublish
+        organization: null
+        type: workflow_job_template
+    - all_parents_must_converge: false
+      diff_mode: null
+      extra_data: {}
+      identifier: 94fee87b-663b-488c-9d10-92d69d220b22
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      natural_key:
+        identifier: 94fee87b-663b-488c-9d10-92d69d220b22
+        type: workflow_job_template_node
+        workflow_job_template:
+          name: ACMMonthlyContentPublish
+          organization: null
+          type: workflow_job_template
+      related:
+        always_nodes: []
+        credentials: []
+        failure_nodes: []
+        success_nodes:
+        - identifier: 6f2e335e-d34b-40f9-9a0a-0ee5079432ce
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: ACMMonthlyContentPublish
+            organization: null
+            type: workflow_job_template
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        name: ACM3CreateTestEnv
+        organization:
+          name: Default
+          type: organization
+        type: job_template
+      verbosity: null
+      workflow_job_template:
+        name: ACMMonthlyContentPublish
+        organization: null
+        type: workflow_job_template
+    - all_parents_must_converge: false
+      diff_mode: null
+      extra_data: {}
+      identifier: c094a853-640d-43f2-8bc8-9623ca35a5b6
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      natural_key:
+        identifier: c094a853-640d-43f2-8bc8-9623ca35a5b6
+        type: workflow_job_template_node
+        workflow_job_template:
+          name: ACMMonthlyContentPublish
+          organization: null
+          type: workflow_job_template
+      related:
+        always_nodes: []
+        credentials: []
+        failure_nodes: []
+        success_nodes:
+        - identifier: f21e14f2-6f74-4c4d-96c1-6dd48344bd1b
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: ACMMonthlyContentPublish
+            organization: null
+            type: workflow_job_template
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        name: ACM6PromoteToQA
+        organization:
+          name: Default
+          type: organization
+        type: job_template
+      verbosity: null
+      workflow_job_template:
+        name: ACMMonthlyContentPublish
+        organization: null
+        type: workflow_job_template
+    - all_parents_must_converge: false
+      diff_mode: null
+      extra_data: {}
+      identifier: 49d6b2a2-f51a-43dc-9f99-ae32709a84dd
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      natural_key:
+        identifier: 49d6b2a2-f51a-43dc-9f99-ae32709a84dd
+        type: workflow_job_template_node
+        workflow_job_template:
+          name: ACMMonthlyContentPublish
+          organization: null
+          type: workflow_job_template
+      related:
+        always_nodes: []
+        credentials: []
+        failure_nodes: []
+        success_nodes:
+        - identifier: c094a853-640d-43f2-8bc8-9623ca35a5b6
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: ACMMonthlyContentPublish
+            organization: null
+            type: workflow_job_template
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        name: ACM5.1.2TestJBoss
+        organization:
+          name: Default
+          type: organization
+        type: job_template
+      verbosity: null
+      workflow_job_template:
+        name: ACMMonthlyContentPublish
+        organization: null
+        type: workflow_job_template
+    - all_parents_must_converge: false
+      diff_mode: null
+      extra_data: {}
+      identifier: e4a81e56-0129-41b4-b16e-fb4a8290968d
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      natural_key:
+        identifier: e4a81e56-0129-41b4-b16e-fb4a8290968d
+        type: workflow_job_template_node
+        workflow_job_template:
+          name: ACMMonthlyContentPublish
+          organization: null
+          type: workflow_job_template
+      related:
+        always_nodes: []
+        credentials: []
+        failure_nodes: []
+        success_nodes:
+        - identifier: c094a853-640d-43f2-8bc8-9623ca35a5b6
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: ACMMonthlyContentPublish
+            organization: null
+            type: workflow_job_template
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        name: ACM5.2.2TestLAMP
+        organization:
+          name: Default
+          type: organization
+        type: job_template
+      verbosity: null
+      workflow_job_template:
+        name: ACMMonthlyContentPublish
+        organization: null
+        type: workflow_job_template
+    - all_parents_must_converge: false
+      diff_mode: null
+      extra_data: {}
+      identifier: b52b6bb4-c27f-43e1-9580-2cda382712fe
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      natural_key:
+        identifier: b52b6bb4-c27f-43e1-9580-2cda382712fe
+        type: workflow_job_template_node
+        workflow_job_template:
+          name: ACMMonthlyContentPublish
+          organization: null
+          type: workflow_job_template
+      related:
+        always_nodes: []
+        credentials: []
+        failure_nodes: []
+        success_nodes:
+        - identifier: c094a853-640d-43f2-8bc8-9623ca35a5b6
+          type: workflow_job_template_node
+          workflow_job_template:
+            name: ACMMonthlyContentPublish
+            organization: null
+            type: workflow_job_template
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        name: ACM5.3.2TestWordpress
+        organization:
+          name: Default
+          type: organization
+        type: job_template
+      verbosity: null
+      workflow_job_template:
+        name: ACMMonthlyContentPublish
+        organization: null
+        type: workflow_job_template
+    - all_parents_must_converge: false
+      diff_mode: null
+      extra_data: {}
+      identifier: f21e14f2-6f74-4c4d-96c1-6dd48344bd1b
+      inventory: null
+      job_tags: null
+      job_type: null
+      limit: null
+      natural_key:
+        identifier: f21e14f2-6f74-4c4d-96c1-6dd48344bd1b
+        type: workflow_job_template_node
+        workflow_job_template:
+          name: ACMMonthlyContentPublish
+          organization: null
+          type: workflow_job_template
+      related:
+        always_nodes: []
+        credentials: []
+        failure_nodes: []
+        success_nodes: []
+      scm_branch: null
+      skip_tags: null
+      unified_job_template:
+        name: ACM7DeleteSnaps
+        organization:
+          name: Default
+          type: organization
+        type: job_template
+      verbosity: null
+      workflow_job_template:
+        name: ACMMonthlyContentPublish
+        organization: null
+        type: workflow_job_template
+  scm_branch: ''
+  survey_enabled: false
+  webhook_credential: null
+  webhook_service: ''
