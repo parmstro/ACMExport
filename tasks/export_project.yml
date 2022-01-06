@@ -16,13 +16,21 @@
 - name: "Write asset json to local file {{ item.path }}"
   copy:
     content: "{{ result.assets | to_nice_json(indent=2) }}"
-    dest: "{{ item.path }}"
+    dest: "{{ item.path }}.j2"
   delegate_to: 127.0.0.1
   when: backup_type == "json"
 
 - name: "Write asset yaml to local file {{ item.path }}"
   copy:
     content: "{{ result.assets | to_nice_yaml(indent=2) }}"
-    dest: "{{ item.path }}"
+    dest: "{{ item.path }}.j2"
   delegate_to: 127.0.0.1
   when: backup_type == "yml"
+
+- name: "Create parameterized file for import - {{ item.name }}"
+  ansible.builtin.lineinfile:
+    path: "{{ item.path }}.j2"
+    regexp: "^  scm_url:"
+    line: "  scm_url: {% raw %}'{{ acm_project_url }}'{% endraw %}"
+  delegate_to: 127.0.0.1
+  

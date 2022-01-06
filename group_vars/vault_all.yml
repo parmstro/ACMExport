@@ -1,1 +1,11 @@
-
+---
+vault_tower_username: ""
+vault_tower_password: ""
+vault_default_credential_become_method: ""
+vault_default_credential_become_username: ""
+vault_default_credential_username: ""
+vault_default_credential_password: ""
+vault_towergithub_credential_username: "" 
+vault_towergithub_credential_password: ""
+vault_ACM_vault_credential_vault_id: ""
+vault_ACM_vault_credential_vault_password: ""
