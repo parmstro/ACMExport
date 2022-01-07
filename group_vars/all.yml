@@ -7,8 +7,6 @@ controller_password: "{{ vault_tower_password }}"
 #ACM assets
 backup_path: "./backup"
 acm_project_url: "https://github.com/parmstro/AutomatingContentManagement.git"
-
-#one of yml or json
 backup_type: yml
 credentials:
 - name: default

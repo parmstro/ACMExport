@@ -15,7 +15,7 @@ Assumptions:
 - it bears repeating, you have read the blog or reviewed the code for the Automating Content Management project. :-)
 
 Basic steps:
-- clone the ACM repo
+- clone the AutomatingContentManagement repo
 - clone the ACMExport repo
 - set the variables in the vault file
 - update the project URLs
