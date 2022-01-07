@@ -24,18 +24,27 @@ Basic steps:
 In the group_vars directory are the all.yml and vault_all.yml files. The vault_all.yml file contains the sensitive variables you must replace this file with your own. In the repo, this file contains no values and looks something like:
 ```
 ---
-# These are the credentials ACMExport will use to connect to your controller instance to run an import or export
+# These are the credentials ACMExport will use to 
+# connect to your controller instance to run an import or export
 vault_tower_username: ""
 vault_tower_password: ""
-# These are the values for your default machine credential. The credential the controller typically uses to connect to systems you are automating
+
+# These are the values for your default machine credential. 
+# The credential the controller typically uses to connect to systems you are automating
 vault_default_credential_become_method: ""
 vault_default_credential_become_username: ""
 vault_default_credential_username: ""
 vault_default_credential_password: ""
-# These are the values that the controller uses to connect to your clone of AutomatingContentManagement
+
+# These are the values that the controller uses to 
+# connect to your clone of AutomatingContentManagement i.e. your github login and PAT
 vault_towergithub_credential_username: "" 
 vault_towergithub_credential_password: ""
-# These are the values that you are using to protect all of your vault files in AutomatingContentManagement
+
+# These are the values that you are using to protect 
+# *all* of your vault files in AutomatingContentManagement
+# In the blog I mention that this was done for simplicity 
+# normally we would have vault credentials managed by each project
 vault_ACM_vault_credential_vault_id: ""
 vault_ACM_vault_credential_vault_password: ""
 ```
