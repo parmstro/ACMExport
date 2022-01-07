@@ -15,8 +15,8 @@ Assumptions:
 - it bears repeating, you have read the blog or reviewed the code for the Automating Content Management project. :-)
 
 Basic steps:
-- clone the AutomatingContentManagement repo
-- clone the ACMExport repo
+- fork and clone locally the AutomatingContentManagement repo
+- fork and clone locally the ACMExport repo
 - set the variables in the vault_all.yml file (see below for the variables and what they are for)
 - set the variables in the all.yml file (e.g. update the project URLs)
 - run the Import playbook
@@ -41,7 +41,7 @@ vault_default_credential_username: ""
 vault_default_credential_password: ""
 
 # These are the values that the controller uses to 
-# connect to your clone of AutomatingContentManagement i.e. your github login and PAT
+# connect to your fork of AutomatingContentManagement i.e. your github login and PAT
 vault_towergithub_credential_username: "" 
 vault_towergithub_credential_password: ""
 
@@ -56,7 +56,7 @@ Before running the import playbook, set the value of these variables.
 
 You all know how to use ansible-vault encrypt/decrypt and know how to call you playbook and specify your secret files when running the above playbooks. You could also configure this project in AAP as well... getting very circular though...
 
-Also, in the all.yml change the variable below to reflect your cloned ACM repo
+Also, in the all.yml change the variable below to reflect your forked AutomatingContentManagement repo
 ```
 acm_project_url: 
 ```
