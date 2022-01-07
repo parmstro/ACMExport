@@ -17,15 +17,15 @@ Assumptions:
 Basic steps:
 - clone the AutomatingContentManagement repo
 - clone the ACMExport repo
-- set the variables in the vault_all.yml file (up)
+- set the variables in the vault_all.yml file (see below for the variables and what they are for)
 - set the variables in the all.yml file (e.g. update the project URLs)
 - run the Import playbook
 
 In the group_vars directory are the all.yml and vault_all.yml files. Both files require a bit of editing.
 
-The all.yml file contains are the variables that are used in the project. The two main values that need to be updated are the controller_host value and the acm_project_url value. 
+The all.yml file contains all the variables that are used in the project. The two main values that need to be updated are the controller_host value and the acm_project_url value. 
 
-Where there are secrets, the variable references another variable with a vault_* prefix. These variables are in defined in the vault_all.yml file. The file contains the sensitive data you don't want to share. It allows you to share and copy the code easily without have to hunt for secrets - simply update vault_all.yml and you should be good from a secrets perspective. In the repo, this file contains no values and looks something like:
+Where there are secrets, the variable references another variable with a vault_* prefix. These variables are defined in the vault_all.yml file. The file contains the sensitive data you don't want to share. It allows you to copy the code easily without have to hunt for secrets - simply update vault_all.yml and you should be good from a secrets perspective. In the repo, this file contains no values and looks something like:
 ```
 ---
 # These are the credentials ACMExport will use to 
