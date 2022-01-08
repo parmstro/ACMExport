@@ -19,7 +19,12 @@ Basic steps:
 - fork and clone locally the [ACMExport](https://github.com/parmstro/ACMExport) repo
 - rename group_vars/vault_all.yml.sample to group_vars/vault_all.yml and set the variables (see below for the variables and what they are for)
 - rename group_vars/all.yml.sample to group_vars/all.yml and set the variables (e.g. update the project URLs)
+- Update the inventory file
 - run the Import playbook: ImportConfig.yml
+
+```
+ansible-playbook ImportConfig.yml -e 'ansible_python_interpreter=/usr/bin/python3'
+```
 
 In the group_vars directory are the all.yml and vault_all.yml files. Both files require a bit of editing.
 
