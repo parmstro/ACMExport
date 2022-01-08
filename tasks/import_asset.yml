@@ -9,7 +9,7 @@
     controller_password: "{{ controller_password }}"
     validate_certs: false
   register: result
-  when: backup_type == json
+  when: backup_type == "json"
 
 - name: Import json asset - {{ item.name }}
   awx.awx.import:
@@ -19,7 +19,7 @@
     controller_password: "{{ controller_password }}"
     validate_certs: false
   register: result
-  when: backup_type == yml
+  when: backup_type == "yml"
 
   
 # - debug:
