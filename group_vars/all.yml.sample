@@ -1,11 +1,11 @@
 ---
 # Host variables
-controller_host: "tower.parmstrong.ca"
+controller_host: ""
 controller_username: "{{ vault_tower_username }}"
 controller_password: "{{ vault_tower_password }}"
 
 #ACM assets
-backup_path: "./backup"
+backup_path: "{{ playbook_dir }}/backup"
 acm_project_url: "https://github.com/parmstro/AutomatingContentManagement.git"
 backup_type: yml
 credentials:
