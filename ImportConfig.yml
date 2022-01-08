@@ -3,7 +3,7 @@
 # This is the main Import play
 
 - name: Import the ACM configuration to AAP
-  hosts: autocontroller01
+  hosts: all
   vars_files:
   - group_vars/vault_all.yml
   - group_vars/all.yml
