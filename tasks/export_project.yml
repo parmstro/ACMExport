@@ -34,3 +34,10 @@
     line: "  scm_url: {% raw %}'{{ acm_project_url }}'{% endraw %}"
   delegate_to: 127.0.0.1
   
+- name: "Create parameterized file for import - {{ item.name }}"
+  ansible.builtin.lineinfile:
+    path: "{{ item.path }}.j2"
+    regexp: "^local_path:"
+    line: "  local_path:"
+  delegate_to: 127.0.0.1
+  
