@@ -2,7 +2,12 @@
 ## ACM Export
 This project assumes an advanced knowledge of Ansible Automation Platform 2.1+ and Red Hat Satellite 6.9+. Without the experience, you will problably just get frustrated...
 
-This project contains the code and the export for the Automating Content Management Blog. It is expected that you have read the blog and / or reviewed the code for the ACM project. The code in this project is used to import and export the configuration of the ACM Credentials, Projects, Inventories and Templates. Edit the variables mentioned below and run the ImportConfig.yml playbook to create your required assets in Ansible Automation Platform. Once you have done that, you can make any changes that you want using the AAP Web UI or commands and backup your configuration with the ExportConfig.yml playbook.
+This is a helper project contains the code for recreating the Automating Content Management Blog AAP configuration. It is expected that you have read the blog and / or reviewed the code for the [AutomatingContentManagement](https://github.com/parmstro/AutomatingContentManagement) project. The code in this project is used to import and export the configuration of the credentials, projects, inventories and templates that make up the workflow. 
+
+**PLEASE NOTE:** These assets contain ansible extra variables related to the AutomatingContentManagement project that are specific to the blog and original project. These include hostnames, names of content views and composite content views in Satellie, etc.. It is not intended that this project makes a no-effort configuration of AAP. It is intended that this project reduces the effort to setup the blog environment and follow along. The [AutomatingContentManagment wiki](https://github.com/parmstro/AutomatingContentManagement/wiki) goes into the detail of each template and other assets that are required for making **your** environment work. You are expected to have read the blog post before using this project. 
+
+
+Edit the variables mentioned below and run the ImportConfig.yml playbook to create your required assets in Ansible Automation Platform. Once you have done that, you can make any changes that you want using the AAP Web UI or commands and backup your configuration with the ExportConfig.yml playbook.
 
 ### How to use:
 
