@@ -67,5 +67,10 @@ acm_project_url:
 ```
 Review the files and make changes to suit your environment. 
 
+If you are having trouble with a particular asset, you can try to import only a single asset type using:
+```
+ansible-playbook -i <inventory> --vault-password-file <path> --e path=<path_to_asset_yml> import_individual_asset.yml
+```
+
 If you have any questions or issues, please reach out or use the available github tools.
 
