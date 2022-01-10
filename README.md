@@ -23,7 +23,10 @@ Basic steps:
 - run the Import playbook: ImportConfig.yml
 
 ```
-ansible-playbook ImportConfig.yml -e 'ansible_python_interpreter=/usr/bin/python3'
+ansible-playbook -i <inventory> \
+                 --vault-password-file <path> \
+                 -e 'ansible_python_interpreter=/usr/bin/python3' \
+                 ImportConfig.yml 
 ```
 
 In the group_vars directory are the all.yml and vault_all.yml files. Both files require a bit of editing.
@@ -69,7 +72,10 @@ Review the files and make changes to suit your environment.
 
 If you are having trouble with a particular asset, you can try to import only a single asset type using:
 ```
-ansible-playbook -i <inventory> --vault-password-file <path> --e path=<path_to_asset_yml> import_individual_asset.yml
+ansible-playbook -i <inventory> \
+                 --vault-password-file <path> \
+                 --e path=<path_to_asset_yml> \
+                 import_individual_asset.yml
 ```
 
 If you have any questions or issues, please reach out or use the available github tools.
