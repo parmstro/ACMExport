@@ -12,7 +12,9 @@
 
   - name: "Template the credential asset files"
     include_tasks: tasks/template_asset_files.yml
-    loop: "{{ credentials }}"
+    loop: 
+    - "{{ credentials }}"
+    - "{{ projects }}"
       
   - name: "Import assests - credentials"
     include_tasks: tasks/import_asset.yml
