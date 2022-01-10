@@ -64,18 +64,20 @@ Before running the import playbook, set the value of these variables.
 
 You all know how to use ansible-vault encrypt/decrypt and know how to call you playbook and specify your secret files when running the above playbooks. 
 
+Also, in the all.yml change the variable below to reflect your forked AutomatingContentManagement repo
+```
+acm_project_url: 
+```
+Now you can run the ImportConfig.yml play
+
 ```
 ansible-playbook -i <inventory> \
                  --vault-password-file <path> \
                  -e 'ansible_python_interpreter=/usr/bin/python3' \
                  ImportConfig.yml 
 ```
-
-Also, in the all.yml change the variable below to reflect your forked AutomatingContentManagement repo
-```
-acm_project_url: 
-```
-Review the files and make changes to suit your environment. 
+You need to review all of the assets created in AAP and make any changes that are needed to meet your environment requirements.
+Also, see the Automating Content Management project before running the workflow. 
 
 If you are having trouble with a particular asset, you can try to import only a single asset type using:
 ```
