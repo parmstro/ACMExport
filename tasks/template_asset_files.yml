@@ -6,6 +6,13 @@
 # template command.
 
 # set the template variables
+- name: ensure backup directory exist - backup directory {{ backup_path }}
+  become: yes
+  file:
+    path: "{{ backup_path }}"
+    state: directory
+    mode: 0755
+    owner: "{{ vault_default_credential_username }}"
 
 - name: Set variables
   set_fact: 

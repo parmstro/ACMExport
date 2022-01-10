@@ -14,7 +14,7 @@ projects:
     name: Default execution environment
     type: execution_environment
   description: Automating Content in Satellite 6.0
-  local_path: _78__automatingcontentmanagement
+  #local_path: _78__automatingcontentmanagement
   name: AutomatingContentManagement
   natural_key:
     name: AutomatingContentManagement
@@ -38,5 +38,5 @@ projects:
   scm_type: git
   scm_update_cache_timeout: 0
   scm_update_on_launch: false
-  scm_url: '{{ acm_project_url }}'
+  scm_url: '{{ acm_project_url }}
   timeout: 0
