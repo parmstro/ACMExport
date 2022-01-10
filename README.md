@@ -20,12 +20,14 @@ Assumptions:
 - it bears repeating, you have read the blog or reviewed the code for the Automating Content Management project. :-)
 
 Basic steps:
-- fork and clone locally the [AutomatingContentManagement](https://github.com/parmstro/AutomatingContentManagement) repo
-- fork and clone locally the [ACMExport](https://github.com/parmstro/ACMExport) repo
-- rename group_vars/vault_all.yml.sample to group_vars/vault_all.yml and set the variables (see below for the variables and what they are for)
-- rename group_vars/all.yml.sample to group_vars/all.yml and set the variables (e.g. update the project URLs)
+- Fork and clone locally the [AutomatingContentManagement](https://github.com/parmstro/AutomatingContentManagement) repo
+- Fork and clone locally the [ACMExport](https://github.com/parmstro/ACMExport) repo
+- Rename group_vars/vault_all.yml.sample to group_vars/vault_all.yml and set the variables (see below for the variables and what they are for)
+- Rename group_vars/all.yml.sample to group_vars/all.yml and set the variables (e.g. update the project URLs)
 - Update the inventory file
-- run the Import playbook: ImportConfig.yml
+- Run the Import playbook: ImportConfig.yml
+- Edit the resulting Inventories and Job templates to match your Satellite and AAP environment
+- Run the ExportConfig.yml play to save your configuration.
 
 ```
 ansible-playbook -i <inventory> \
