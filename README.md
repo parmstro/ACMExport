@@ -29,13 +29,6 @@ Basic steps:
 - Edit the resulting Inventories and Job templates to match your Satellite and AAP environment
 - Run the ExportConfig.yml play to save your configuration.
 
-```
-ansible-playbook -i <inventory> \
-                 --vault-password-file <path> \
-                 -e 'ansible_python_interpreter=/usr/bin/python3' \
-                 ImportConfig.yml 
-```
-
 In the group_vars directory are the all.yml and vault_all.yml files. Both files require a bit of editing.
 
 The all.yml file contains all the variables that are used in the project. The two main values that need to be updated are the controller_host value and the acm_project_url value. 
@@ -69,7 +62,14 @@ vault_ACM_vault_credential_vault_password: ""
 ```
 Before running the import playbook, set the value of these variables.
 
-You all know how to use ansible-vault encrypt/decrypt and know how to call you playbook and specify your secret files when running the above playbooks. You could also configure this project in AAP as well... getting very circular though...
+You all know how to use ansible-vault encrypt/decrypt and know how to call you playbook and specify your secret files when running the above playbooks. 
+
+```
+ansible-playbook -i <inventory> \
+                 --vault-password-file <path> \
+                 -e 'ansible_python_interpreter=/usr/bin/python3' \
+                 ImportConfig.yml 
+```
 
 Also, in the all.yml change the variable below to reflect your forked AutomatingContentManagement repo
 ```
